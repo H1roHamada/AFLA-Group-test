@@ -3,12 +3,52 @@
 <head>
   <title> </title>
   <meta charset='UTF-8'>
+  <link rel='stylesheet' type='text/css' href='reset.css'>
   <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 
 <body>
 
-  <script src='script.js'></script>
+  <div class="licences__wrapper">
+    <div class="plans">
+      <label class="plan__item active__plan">
+        <input class="plan__item-radio" type="radio" name="licenseplan" id="licenseplan#1"  data-id="1" data-price='13' checked>
+        <label class="plan__item-name" for="licenseplan#1">licenseplan#1</label>
+      <div class="plan__item-cost"><span>$13 per license</span> </div>
+      </label>
+
+      <label class="plan__item">
+        <input class="plan__item-radio" type="radio" name="licenseplan" id="licenseplan#2" data-id="2" data-price='22'>
+        <label class="plan__item-name" for="licenseplan#2">licenseplan#2</label>
+      <div class="plan__item-cost"><span>$22 per license</span> </div>
+      </label>
+
+      <label class="plan__item">
+        <input class="plan__item-radio" type="radio" name="licenseplan" id="licenseplan#3" data-id="3" data-price='34'>
+        <label class="plan__item-name" for="licenseplan#3">licenseplan#3</label>
+      <div class="plan__item-cost"><span>$34 per license</span> </div>
+      </label>
+    </div>
+
+    <div class="license-quantity">
+      <span style="font-weight: 600; margin-right: 5px;">Number of licenses:</span>
+      <select class="license-quantity_value">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+
+    <div class="total-price">
+      <p>total: <span style="color: rgb(0, 153, 255); " id="total-price">$13</span><sup style="font-size: 15px; vertical-align: top;
+      color: rgb(0, 153, 255);">us</sup></p>
+      <button class="total-price__btn">buy now</button>
+      <div class="selected-plan">Selected plan: #<span id="selected-plan">1</span></div>
+    </div>
+  </div>
+
 </body>
+
+<script src='script.js'></script>
 
 </html>

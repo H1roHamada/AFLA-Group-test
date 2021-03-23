@@ -1,8 +1,204 @@
+@font-face {
+  font-family: "BebasRegular";
+  src: url("assets/fonts/Bebas/BebasNeue-Regular.eot") format("eot"), url("assets/fonts/Bebas/BoldNeue-Regular.otf") format("otf"), url("assets/fonts/Bebas/BebasNeue-Regular.woff") format("woff"), url("assets/fonts/Bebas/BoldNeue-Regular.ttf") format("ttf");
+}
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  background-color: #000;
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.licences__wrapper {
+  border: 8px solid #E5E5E5;
+  padding: 25px;
+  width: 500px;
+  height: 500px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* plans */
+
+.plan__item {
+  cursor: pointer;
+  padding: 15px;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: center;
+  transition: .1s linear all;
+}
+
+.plan__item label {
+  cursor: pointer;
+}
+
+.plan__item-name {
+  letter-spacing: 1.5;
+  font-family: 'BebasRegular';
+  font-size: 30px;
+  color: #929292;
+}
+
+.plan__item-cost {
+  color: #aaaaaa;
+}
+
+.plans::after {
+  margin-top: 15px;
+  content: "";
+  height: 2px;
+  background-color: #E5E5E5;
+  width: 100%;
+  display: block;
+}
+
+.active__plan {
+  border: 1px solid #00c3ff;
+  background-color: rgba(0, 195, 255, 0.05);
+}
+
+
+/* ----- */
+
+
+/* license */
+
+.license-quantity {
+  padding: 25px 0;
+  text-align: center;
+}
+
+.license-quantity select {
+  width: 60px;
+  padding: 5px 0;
+  border-radius: 2px;
+  border: 2px solid #00c3ff;
+  outline: none;
+}
+
+
+/* ----- */
+
+.total-price {
+  text-align: center;
+}
+
+.total-price p {
+  color: rgb(0, 153, 255);
+  margin-bottom: 15px;
+  color: rgb(124, 124, 124);
+  text-transform: uppercase;
+  font-family: 'BebasRegular';
+  font-size: 25px;
+}
+
+.total-price::before {
+  margin-bottom: 25px;
+  content: "";
+  height: 2px;
+  background-color: #E5E5E5;
+  width: 100%;
+  display: block;
+}
+
+.total-price__btn {
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #01a101;
+  padding: 15px 50px;
+  border-radius: 50px;
+  transition: .1s linear all;
+}
+
+.total-price__btn:hover {
+  background-color: green;
+}
+
+.selected-plan {
+  color: #00ace0;
+  font-weight: 500;
+}
+
+
+/* .plan__item-radio */
+
+.plan__item-radio-radio {
+  display: none;
+}
+
+.plan__item-radio[type="radio"]:checked,
+.plan__item-radio[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.plan__item-radio[type="radio"]:checked+label,
+.plan__item-radio[type="radio"]:not(:checked)+label {
+  display: inline-block;
+  position: relative;
+  padding-left: 40px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.plan__item-radio[type="radio"]:checked+label:before,
+.plan__item-radio[type="radio"]:not(:checked)+label:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: -4px;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #0a096d;
+  background-color: #ffffff;
+}
+
+.plan__item-radio[type="radio"]:not(:checked)+label:before {
+  border: 3px solid #E5E5E5;
+}
+
+.plan__item-radio[type="radio"]:checked+label:before,
+.plan__item-radio[type="radio"]:not(:checked)+label:before {
+  border-radius: 100%;
+}
+
+.plan__item-radio[type="radio"]:checked+label:after,
+.plan__item-radio[type="radio"]:not(:checked)+label:after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.plan__item-radio[type="radio"]:checked+label:after,
+.plan__item-radio[type="radio"]:not(:checked)+label:after {
+  left: 8px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #0a90c5;
+}
+
+.plan__item-radio[type="radio"]:not(:checked)+label:after {
+  opacity: 0;
+}
+
+.plan__item-radio[type="radio"]:checked+label:after {
+  opacity: 1;
 }
